@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+/**
+函数是别称6-1
+*/
 func adder() func(int) int {
 	sum := 0
 	return func(v int) int {

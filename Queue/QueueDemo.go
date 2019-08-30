@@ -1,10 +1,13 @@
 package main
 
 import (
-	"HelloWorld/Queue"
+	"HelloWorld/Queue/Queue"
 	"fmt"
 )
 
+/**
+队列
+*/
 func main() {
 
 	q := Queue.Queue{1}
