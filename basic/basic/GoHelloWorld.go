@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"fmt"
@@ -32,8 +32,12 @@ func euler() {
 func triangle() {
 	var a, b int = 3, 4
 	var c int
-	c = int(math.Sqrt(float64(a*a + b*b))) //强制类型转换
+	c = calcTriangle(a, b) //强制类型转换
 	fmt.Println(c)
+}
+
+func calcTriangle(a, b int) int {
+	return int(math.Sqrt(float64(a*a + b*b)))
 }
 func consts() {
 	//const filename = "abc.txt"
