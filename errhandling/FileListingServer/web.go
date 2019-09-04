@@ -26,6 +26,7 @@ func errWrapper(handler appHandler) func(w http.ResponseWriter,
 		if err != nil {
 			log.Printf("Error:%s", err.Error())
 
+			//user error
 			if userErr, ok := err.(userError); ok {
 				http.Error(writer,
 					userErr.Message(),
@@ -33,6 +34,7 @@ func errWrapper(handler appHandler) func(w http.ResponseWriter,
 				return
 			}
 
+			//sysstem error
 			code := http.StatusOK
 			switch {
 			case os.IsNotExist(err):
