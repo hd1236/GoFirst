@@ -23,10 +23,27 @@ func main() {
 	start := point{0, 0}
 	fmt.Println(&next == &start)
 	fmt.Println(next == start)
+
+	nextPlus := pointPlus{point{2, 4}, 5, "hand"}
+	startPlus := pointPlus{point{2, 4}, 5, "hand"}
+	fmt.Println("pointPlus:", nextPlus == startPlus)
+	fmt.Println("pointPlus&:", &nextPlus == &startPlus)
+
+	a := make([]int, 5)
+	b := make([]int, 5)
+	//fmt.Println("[]int:",a == b)slice不能比较本身
+	fmt.Println("[]int]&:", &a == &b)
 }
 
 type point struct {
 	i, j int
+}
+
+//结构体比较，会把结构体里的基础数据做对比
+type pointPlus struct {
+	p point
+	i int
+	s string
 }
 
 var dirs = []point{
